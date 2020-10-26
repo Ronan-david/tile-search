@@ -1,18 +1,70 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="main-container">
+    <h1 class="title">TILE SEARCH</h1>
+    <Search />
+    <Filters />
+    <TileContainer :getEngines="engines"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Search from '@/components/Search.vue'
+import Filters from '@/components/Filters.vue'
+import TileContainer from '@/components/tiles/TileContainer.vue'
+import engines from '@/json/engines'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    Search,
+    Filters,
+    TileContainer
+  },
+  data () {
+    return {
+      engines
+    }
+  },
+  methods: {
+    ...mapActions({
+      setEnginesJSON: 'setEnginesJSON'
+    })
+  },
+  mounted () {
+    if (this.engines && this.engines.length > 0) {
+      this.setEnginesJSON(this.engines)
+    }
   }
 }
 </script>
+<style lang="scss">
+.main-container {
+  position: relative;
+}
+.circle {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 60px;
+  right: 0;
+}
+
+.circle::before {
+  content: "+";
+  font-size: 50px;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  font-family:courier;
+  color:white;
+}
+</style>

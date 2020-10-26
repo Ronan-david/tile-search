@@ -1,0 +1,925 @@
+[
+    {
+        "categoryName": "Moteurs de recherche",
+        "data": [
+            {
+                "name": "Google",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "google.com/search?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "google"
+            },
+            {
+                "name": "DuckDuckGo",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "DuckDuckGo.com/search?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "duckduckgo"
+            },
+            {
+                "name": "Wikipedia Fr",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "fr.wikipedia.org/wiki/Sp%C3%A9cial:Recherche?search=&sourceid=Mozilla-search&ns0=1"
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "wikipedia"
+            },
+            {
+                "name": "Wikipedia Eng",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "en.wikipedia.org/w/index.php?search=roman+empire&title=Special:Search&profile=advanced&fulltext=1&advancedSearch-current=%7B%7D&ns0=1"
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "wikipedia"
+            }
+        ]
+    },
+    {
+        "categoryName": "Social",
+        "data": [
+            {
+                "name": "Facebook",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "Facebook.com/search?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "facebook"
+            },
+            {
+                "name": "Instagram",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "Instagram.com/search?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "instagram"
+            },
+            {
+                "name": "Reddit",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "reddit.com/search/?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "reddit"
+            },
+            {
+                "name": "Imgur",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "imgur.com/search?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "imgur"
+            },
+            {
+                "name": "StackExchange",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "stackexchange.com/search?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "stackexchange"
+            },
+            {
+                "name": "Twitter",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "twitter.com/search?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "twitter"
+            },
+            {
+                "name": "Youtube",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "youtube.com/results?search_query="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "youtube"
+            }
+        ]
+    },
+    {
+        "categoryName": "Journaux",
+        "data": [
+            {
+                "name": "Le Monde",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "lemonde.fr/recherche/?search_keywords="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "lemonde"
+            },
+            {
+                "name": "Mediapart",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "mediapart.fr/search?search_word="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "mediapart"
+            },
+            {
+                "name": "Ouest-France",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "ouest-france.fr/recherche/#!r/query/"
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "ouest-france"
+            },
+            {
+                "name": "Le Figaro",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "recherche.lefigaro.fr/recherche/"
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "figaro"
+            },
+            {
+                "name": "New York Times",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "nytimes.com/search?query="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "nytimes"
+            },
+            {
+                "name": "Reuters",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "reuters.com/search/news?blob="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "reuters"
+            },
+            {
+                "name": "APnews",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "apnews.com/hub/"
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "apnews"
+            }
+        ]
+    },
+    {
+        "categoryName": "Développement <br />informatique",
+        "data": [
+            {
+                "name": "StackOverFLow",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "stackoverflow.com/search?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "stackoverflow"
+            },
+            {
+                "name": "Chocolatey",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "chocolatey.org/packages?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "chocolatey"
+            },
+            {
+                "name": "Github",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "github.com/search?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "github"
+            },
+            {
+                "name": "Hashtoolkit",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "hashtoolkit.com/decrypt-hash?hash="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "hashtoolkit"
+            },
+            {
+                "name": "SuperUser",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "superuser.com/search?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "superuser"
+            }
+        ]
+    },
+    {
+        "categoryName": "Abandonware",
+        "data": [
+            {
+                "name": "Abandonia",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "abandonia.com/"
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "abandonia"
+            },
+            {
+                "name": "AbandonwareFrance",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "abandonware-france.org/ltf_abandon/ltf_listes_jeux.php?search=1&keywords="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "abandonwarefrance"
+            }
+        ]
+    },
+    {
+        "categoryName": "Logiciels",
+        "data": [
+            {
+                "name": "AlternativeTo",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "alternativeto.net/browse/search/?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "alternativeto"
+            }
+        ]
+    },
+    {
+        "categoryName": "Add-ons <br />de Navigateurs",
+        "data": [
+            {
+                "name": "AddOnMozilla",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "addons.mozilla.org/en-US/firefox/search/?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "addonsmozilla"
+            }
+        ]
+    },
+    {
+        "categoryName": "Téléchargements <br /divers",
+        "data": [
+            {
+                "name": "1337",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "1337.root.yt/srch?search="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "1337"
+            },
+            {
+                "name": "Filelisting",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "filelisting.com/result?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "filelisting"
+            },
+            {
+                "name": "PSARips",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "psarips.one/?s="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "psarips"
+            },
+            {
+                "name": "Rutracker",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "rutracker.org/forum/login.php?redirect=tracker.php?max=1&nm="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "rutracker"
+            },
+            {
+                "name": "YiFy",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "yts.vc/search-movies/?query="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "yify"
+            }
+        ]
+    },
+    {
+        "categoryName": "Achats en ligne",
+        "data": [
+            {
+                "name": "Amazon France",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "amazon.fr/s/ref=nb_sb_noss?__mk_fr_FR=%C5M%C5%u017D%D5%D1&url=search-alias%3Daps&field-keywords="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "amazon"
+            },
+            {
+                "name": "Amazon Anglais",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "amazon.com/s?k="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "amazon"
+            },
+            {
+                "name": "eBay",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_sacat=0&_nkw="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "ebay"
+            }
+        ]
+    },
+    {
+        "categoryName": "Achats de musique",
+        "data": [
+            {
+                "name": "Bandcamp",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "bandcamp.com/search?from=corphome&q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "bandcamp"
+            },
+            {
+                "name": "Discogs",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "discogs.com/search/?type=all&q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "discogs"
+            },
+            {
+                "name": "Hiphop Lossless",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "hiphoplossless.com/?s="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "hiphoplossless"
+            }
+        ]
+    },
+    {
+        "categoryName": "Geek",
+        "data": [
+            {
+                "name": "Fandom",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "fandom.com/?s="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "fandom"
+            }
+        ]
+    },
+    {
+        "categoryName": "Films et séries TV",
+        "data": [
+            {
+                "name": "IMDB",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "imdb.com/find?s=all&q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "imdb"
+            },
+            {
+                "name": "Letterbox",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "letterboxd.com/search/?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "letterbox"
+            },
+            {
+                "name": "JustWatch",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "justwatch.com/fr/recherche?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "justwatch"
+            },
+            {
+                "name": "MyAnimeList",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "myanimelist.net/anime.php?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "myanimelist"
+            },
+            {
+                "name": "Opensubtitles",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "opensubtitles.org/fr/search2?id=8&action=search&SubLanguageID=all&Season=&Episode=&SubSumCD=&Genre=&MovieByteSize=&MovieLanguage=&MovieImdbRatingSign=1&MovieImdbRating=&MovieCountry=&MovieYearSign=1&MovieYear=&MovieFPS=&SubFormat=&SubAddDate=&Uploader=&IDUser=&Translator=&IMDBID=&MovieHash=&IDMovie=&MovieName="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "opensubtitles"
+            },
+            {
+                "name": "TheDeuce",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "grindhousedatabase.com/index.php?title=Special:Search&search="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "thedeuce"
+            },
+            {
+                "name": "TraktV (Movies)",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "trakt.tv/search/movies/?query="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "trakt"
+            },
+            {
+                "name": "TraktV (Shows)",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "trakt.tv/search/shows?query="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "trakt"
+            },
+            {
+                "name": "WSDB",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "spaghetti-western.net/index.php?search="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "wsdb"
+            },
+            {
+                "name": "Youserie.com",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "yourserie.com/?s="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "youserie"
+            }
+        ]
+    },
+    {
+        "categoryName": "Jeux vidéo",
+        "data": [
+            {
+                "name": "GGApp",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "ggapp.io/search/"
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "ggapp"
+            },
+            {
+                "name": "HowLongToBeat",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "howlongtobeat.com/game.php?id=324&t=games&platform=&search_sort_g=popular&search_range_type=main&search_len_str_g=&search_len_end_g=&search_sort_u=postcount&detail=&q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "howlongtobeat"
+            },
+            {
+                "name": "Jeuxvideo.com",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "jeuxvideo.com/recherche.php?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "jeuxvideo"
+            },
+            {
+                "name": "Mobygames",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "mobygames.com/search/quick?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "mobygames"
+            },
+            {
+                "name": "MaGog",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "an-ovel.com/cgi-bin/magog.cgi?ver=450&scp=gdspur&dsp=abcdefghijklmanopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&ord=&flt=tcs~~&opt="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "magog"
+            },
+            {
+                "name": "Rawg.io",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "rawg.io/search?query="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "rawg"
+            },
+            {
+                "name": "Vimm's Lair",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "vimm.net/vault/?p=list&q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "vimmslair"
+            }
+        ]
+    },
+    {
+        "categoryName": "Ecoute de musique",
+        "data": [
+            {
+                "name": "LastFM",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "last.fm/search?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "lastfm"
+            },
+            {
+                "name": "RateYourMusic",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "rateyourmusic.com/search?bx=231b8514e9efe3e57c5defd2bc25f6cf&searchtype=a&searchterm="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "rateyourmusic"
+            }
+        ]
+    },
+    {
+        "categoryName": "Divers",
+        "data": [
+            {
+                "name": "Hdqwalls",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "hdqwalls.com/search?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "hdqwalls"
+            },
+            {
+                "name": "LaPoste",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "laposte.fr/professionnel/outils/suivre-vos-envois#?code="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "laposte"
+            }
+        ]
+    },
+    {
+        "categoryName": "Culture libre",
+        "data": [
+            {
+                "name": "LibGen",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "b-ok.cc/s/"
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "libgen"
+            },
+            {
+                "name": "University Papers",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "booksc.xyz/s/?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "universitypapers"
+            },
+            {
+                "name": "ResearchGate",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "researchgate.net/search?context=publicSearchHeader&q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "researchgate"
+            },
+            {
+                "name": "Semantic Scholar",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "semanticscholar.org/search?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "semanticscholar"
+            },
+            {
+                "name": "Waybackmachine",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "web.archive.org/web/*/"
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "waybackmachine"
+            }
+        ]
+    },
+    {
+        "categoryName": "Traduction",
+        "data": [
+            {
+                "name": "Linguee Eng-Fr",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "linguee.com/english-french/search?il=EN&tool=opensearch&query="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "linguee"
+            }
+        ]
+    },
+    {
+        "categoryName": "Maps",
+        "data": [
+            {
+                "name": "OpenStreetMap",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "openstreetmap.org/search?query="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "openstreetmap"
+            }
+        ]
+    },
+    {
+        "categoryName": "Banques d'images",
+        "data": [
+            {
+                "name": "NounProject",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "thenounproject.com/search/?q="
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "nounproject"
+            },
+            {
+                "name": "PixaBay",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "pixabay.com/images/search/"
+                    }
+                ],
+                "letters": "G",
+                "color": "#ffffff",
+                "logo": "pixabay"
+            }
+        ]
+    }
+]
