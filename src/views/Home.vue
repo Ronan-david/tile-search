@@ -3,7 +3,7 @@
     <h1 class="title">TILE SEARCH</h1>
     <search />
     <filters />
-    <tile-container :engines="engines"/>
+    <tile-container :engines="getEngines"/>
   </div>
 </template>
 
@@ -13,7 +13,6 @@ import Search from '@/components/Search.vue'
 import Filters from '@/components/Filters.vue'
 import TileContainer from '@/components/tiles/TileContainer.vue'
 import engines from '@/json/engines'
-import { mapActions } from 'vuex'
 
 export default {
   name: 'Home',
@@ -27,14 +26,9 @@ export default {
       engines
     }
   },
-  methods: {
-    ...mapActions({
-      setEnginesJSON: 'setEnginesJSON'
-    })
-  },
-  mounted () {
-    if (this.engines && this.engines.length > 0) {
-      this.setEnginesJSON(this.engines)
+  computed: {
+    getEngines () {
+      return [...this.engines]
     }
   }
 }

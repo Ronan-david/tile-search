@@ -34,10 +34,7 @@ export default {
   watch: {
     allInputs: {
       handler () {
-        this.setFilter({
-          id: this.allInputs[0].id,
-          value: this.allInputs[0].value.toLowerCase()
-        })
+        this.setFilter(this.allInputs[0].value.toLowerCase())
       },
       deep: true
     }

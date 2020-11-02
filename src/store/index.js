@@ -9,7 +9,7 @@ export default new Vuex.Store({
       json: [],
       chosen: []
     },
-    filters: []
+    filters: null
   },
   mutations: {
     SET_ENGINE_JSON: (state, payload) => {
@@ -25,12 +25,13 @@ export default new Vuex.Store({
       state.Engines.chosen.push(payload)
     },
     SET_FILTER: (state, payload) => {
-      const filterId = state.filters.findIndex(e => e.id === payload.id)
-      if (filterId > -1) {
-        state.filters[filterId] = payload
-      } else {
-        state.filters.push(payload)
-      }
+      // const filterId = state.filters.findIndex(e => e.id === payload.id)
+      // if (filterId > -1) {
+      //   state.filters[filterId] = payload
+      // } else {
+      //   state.filters.push(payload)
+      // }
+      state.filters = payload
     }
   },
   actions: {

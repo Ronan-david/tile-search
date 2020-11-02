@@ -1,15 +1,17 @@
 <template>
     <div class="tile-container">
-      <div class="column" v-for="(engine, index) in filteredEngines" :key="`group_${index}`">
-        <h2 class="column-title" v-html="engine.categoryName" />
-        <div class="row-tile">
-          <Tile
-            v-for="(tile, key) in engine.data"
-            :tile="tile"
-            :key="`tile_${key}`"
-          />
+      <template v-if="filteredEngines">
+        <div class="column" v-for="(engine, index) in filteredEngines" :key="`group-${index}`">
+          <h2 class="column-title" v-html="engine.categoryName" />
+          <div class="row-tile">
+            <Tile
+              v-for="(tile, key) in engine.data"
+              :tile="tile"
+              :key="`tile-${key}`"
+            />
+          </div>
         </div>
-      </div>
+      </template>
     </div>
 </template>
 <script>
@@ -23,7 +25,7 @@ export default {
   },
   data () {
     return {
-      filteredEngines: []
+      filteredEngines: null
     }
   },
   props: {
@@ -35,7 +37,8 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'getFilters'
+      'getFilters',
+      'getEnginesData'
     ])
   },
   watch: {
@@ -43,8 +46,7 @@ export default {
       handler: function () {
         this.filterEngines()
       },
-      deep: true,
-      immediate: true
+      deep: true
     }
   },
   methods: {
@@ -52,23 +54,30 @@ export default {
       'setFilteredEngines'
     ]),
     filterEngines () {
-      if (this.engines && this.getFilters && this.getFilters.length > 0) {
-        const result = []
+      if (this.engines && this.getFilters && this.getFilters !== '') {
+        console.log('filters', this.getFilters)
+        const categories = []
         this.engines.forEach(element => {
           if (!element.data) return
-          const checkValue = element.data.findIndex(engine => {
-            return engine.name.toLowerCase().includes(this.getFilters[0].value.toLowerCase())
-          }) > -1
+          const elementCopy = { ...element }
+          const filteredEnginesResult = elementCopy.data.filter(engine => {
+            return engine.name.toLowerCase().includes(this.getFilters)
+          })
 
-          if (checkValue) {
-            result.push(element)
+          if (filteredEnginesResult && filteredEnginesResult.length > 0) {
+            elementCopy.data = filteredEnginesResult
+            categories.push(elementCopy)
           }
         })
-        console.log('result', result)
-        this.filteredEngines = result
+        this.filteredEngines = categories
+      } else {
+        console.log('no filters', this.engines)
+        this.filteredEngines = this.engines
       }
-      this.filteredEngines = this.engines
     }
+  },
+  mounted () {
+    this.filterEngines()
   }
 }
 </script>
@@ -99,6 +108,12 @@ export default {
       border-left: 3px solid #7291a1;
       padding-left: 10px;
     }
+  }
+  pre {
+    font-size: 1.5rem;
+    background-color: black;
+    color: white;
+    text-align: left;
   }
 }
 </style>
