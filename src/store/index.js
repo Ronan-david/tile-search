@@ -7,16 +7,15 @@ export default new Vuex.Store({
   state: {
     Engines: {
       json: [],
-      chosen: [],
-      filterTheme: '',
-      filterName: ''
-    }
+      chosen: []
+    },
+    filters: []
   },
   mutations: {
-    SET_ENGINE_JSON (state, payload) {
+    SET_ENGINE_JSON: (state, payload) => {
       state.Engines.json.push(payload)
     },
-    SET_CHOSEN_ENGINE (state, payload) {
+    SET_CHOSEN_ENGINE: (state, payload) => {
       for (let i = 0; i < state.Engines.chosen.length; i++) {
         if (state.Engines.chosen[i] === payload) {
           state.Engines.chosen.splice(i, 1)
@@ -25,11 +24,13 @@ export default new Vuex.Store({
       }
       state.Engines.chosen.push(payload)
     },
-    SET_FILTER_THEME (state, payload) {
-      state.Engines.filterTheme = payload
-    },
-    SET_FILTER_NAME (state, payload) {
-      state.Engines.filterName = payload
+    SET_FILTER: (state, payload) => {
+      const filterId = state.filters.findIndex(e => e.id === payload.id)
+      if (filterId > -1) {
+        state.filters[filterId] = payload
+      } else {
+        state.filters.push(payload)
+      }
     }
   },
   actions: {
@@ -39,15 +40,11 @@ export default new Vuex.Store({
     setChosenEngine: ({ commit }, payload) => {
       commit('SET_CHOSEN_ENGINE', payload)
     },
-    setFilterTheme: ({ commit }, payload) => {
-      commit('SET_FILTER_THEME', payload)
-    },
-    setFilterName: ({ commit }, payload) => {
-      commit('SET_FILTER_NAME', payload)
+    setFilter: ({ commit }, payload) => {
+      commit('SET_FILTER', payload)
     }
   },
   getters: {
-    getFilterTheme: state => state.Engines.filterTheme,
-    getFilterName: state => state.Engines.filterName
+    getFilters: state => state.filters
   }
 })

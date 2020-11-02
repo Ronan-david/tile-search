@@ -1,9 +1,9 @@
 <template>
   <div class="main-container">
     <h1 class="title">TILE SEARCH</h1>
-    <Search />
-    <Filters />
-    <TileContainer :getEngines="engines"/>
+    <search />
+    <filters />
+    <tile-container :engines="engines"/>
   </div>
 </template>
 

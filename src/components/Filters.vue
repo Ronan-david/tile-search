@@ -2,10 +2,10 @@
     <div>
         <input
           v-for="(input, index) in allInputs"
-          v-model="input['search' + input.id]"
+          v-model="input.value"
           type="text"
           :placeholder="input.placeholder"
-          :key="index"
+          :key="`input-${input.id}}-${index}`"
         >
     </div>
 </template>
@@ -16,58 +16,31 @@ export default {
   name: 'filters',
   data: () => {
     return {
-      // searchThemeTerm: '',
-      // searchNameTerm: '',
       allInputs: [
         {
           emitName: 'filter-topic',
           placeholder: 'Thème',
           id: 'Theme',
-          searchTheme: ''
+          value: null
         }
-        // {
-        //   emitName: 'filter-name',
-        //   placeholder: 'Nom',
-        //   id: 'Name',
-        //   searchName: ''
-        // }
       ]
     }
   },
   methods: {
     ...mapActions({
-      setFilterTheme: 'setFilterTheme',
-      setFilterName: 'setFilterName'
+      setFilter: 'setFilter'
     })
   },
-  computed: {
-    // pour watcher une data dans un array
-    // permet de watcher les v-model dynamiques
-    searchThemeToWatch () {
-      return this.allInputs[0].searchTheme
-    },
-    searchNameToWatch () {
-      return this.allInputs[1].searchName
-    }
-  },
   watch: {
-    searchThemeToWatch: {
+    allInputs: {
       handler () {
-        this.setFilterTheme(this.allInputs[0].searchTheme.toLowerCase())
-      },
-      deep: true
-    },
-    searchNameToWatch: {
-      handler () {
-        this.setFilterName(this.allInputs[1].searchName.toLowerCase())
+        this.setFilter({
+          id: this.allInputs[0].id,
+          value: this.allInputs[0].value.toLowerCase()
+        })
       },
       deep: true
     }
-  },
-  mounted () {
   }
 }
 </script>
-<style lang="scss">
-
-</style>

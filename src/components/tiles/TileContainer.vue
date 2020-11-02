@@ -1,6 +1,6 @@
 <template>
-    <div class="tile-container" v-if="getEngines">
-      <div class="column" v-for="(engine, index) in getFilteredEngines" :key="`group_${index}`">
+    <div class="tile-container">
+      <div class="column" v-for="(engine, index) in filteredEngines" :key="`group_${index}`">
         <h2 class="column-title" v-html="engine.categoryName" />
         <div class="row-tile">
           <Tile
@@ -14,19 +14,20 @@
 </template>
 <script>
 import Tile from './Tile'
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'TileContainer',
-  data () {
-    return {
-    }
-  },
   components: {
     Tile
   },
+  data () {
+    return {
+      filteredEngines: []
+    }
+  },
   props: {
-    getEngines: {
+    engines: {
       type: Array,
       required: false,
       default: () => []
@@ -34,31 +35,40 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'getFilterTheme',
-      'getFilterName'
-    ]),
-    getFilteredEngines () {
-      const enginesCopy = [...this.getEngines]
-      const enginesCategories = enginesCopy.filter(engi => engi.categoryName.toLowerCase().includes(this.getFilterTheme))
-      let result = null
-      const test = []
-      if (enginesCategories && this.getFilterName && this.getFilterName.length > 0) {
-        result = enginesCategories.filter(element => {
-          return element.data.findIndex((el, index) => {
-            if (el.name.toLowerCase().includes(this.getFilterName.toLowerCase())) {
-              test.push(element.data[index])
-              return el
-            }
-          }) > -1
-        })
-        console.log('test', test)
-        return result
-      } else {
-        return enginesCategories
-      }
+      'getFilters'
+    ])
+  },
+  watch: {
+    getFilters: {
+      handler: function () {
+        this.filterEngines()
+      },
+      deep: true,
+      immediate: true
     }
   },
-  mounted () {
+  methods: {
+    ...mapActions([
+      'setFilteredEngines'
+    ]),
+    filterEngines () {
+      if (this.engines && this.getFilters && this.getFilters.length > 0) {
+        const result = []
+        this.engines.forEach(element => {
+          if (!element.data) return
+          const checkValue = element.data.findIndex(engine => {
+            return engine.name.toLowerCase().includes(this.getFilters[0].value.toLowerCase())
+          }) > -1
+
+          if (checkValue) {
+            result.push(element)
+          }
+        })
+        console.log('result', result)
+        this.filteredEngines = result
+      }
+      this.filteredEngines = this.engines
+    }
   }
 }
 </script>
