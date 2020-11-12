@@ -1,0 +1,55 @@
+@media (max-width: 760px) {
+    .main-container {
+        .search {
+            &-box {
+                width: 100%;
+
+                .search-info {
+                    display: none;
+                }
+            }
+        }
+        .filters {
+            width: 100%;
+
+            &-box {
+                display: flex;
+                flex-flow: column;
+
+                .filters-input, .filters-select {
+                    width: auto;
+                    margin: 5px 0 0 0;
+                }
+            }
+
+        }
+        .tile-container {
+            width: 100%;
+            
+            .column {
+                display: flex;
+                flex-flow: column nowrap;
+
+                .column-title {
+                    width: 100%;
+                    text-decoration: underline;
+                    text-align: center;
+                }
+
+                .row-tile {
+                    border-left: none;
+                    display: flex;
+                    justify-content: space-evenly;
+
+                    .overtile {
+                        .overlay {
+                            .criteria-box {
+                                width: 80%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

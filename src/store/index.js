@@ -7,16 +7,19 @@ export default new Vuex.Store({
   state: {
     Engines: {
       json: [],
-      chosen: [],
-      filterTheme: '',
-      filterName: ''
-    }
+      chosen: []
+    },
+    Criteria: {
+      chosen: []
+    },
+    enginesFilters: null,
+    categoriesFilters: null
   },
   mutations: {
-    SET_ENGINE_JSON (state, payload) {
+    SET_ENGINE_JSON: (state, payload) => {
       state.Engines.json.push(payload)
     },
-    SET_CHOSEN_ENGINE (state, payload) {
+    SET_CHOSEN_ENGINE: (state, payload) => {
       for (let i = 0; i < state.Engines.chosen.length; i++) {
         if (state.Engines.chosen[i] === payload) {
           state.Engines.chosen.splice(i, 1)
@@ -25,11 +28,17 @@ export default new Vuex.Store({
       }
       state.Engines.chosen.push(payload)
     },
-    SET_FILTER_THEME (state, payload) {
-      state.Engines.filterTheme = payload
+    SET_CHOSEN_CRITERIA: (state, payload) => {
+      state.Criteria.chosen = []
+      for (let i = 0; i < payload.length; i++) {
+        state.Criteria.chosen.push(payload[i])
+      }
     },
-    SET_FILTER_NAME (state, payload) {
-      state.Engines.filterName = payload
+    SET_ENGINES_FILTER: (state, payload) => {
+      state.enginesFilters = payload
+    },
+    SET_CATEGORIES_FILTER: (state, payload) => {
+      state.categoriesFilters = payload
     }
   },
   actions: {
@@ -39,15 +48,20 @@ export default new Vuex.Store({
     setChosenEngine: ({ commit }, payload) => {
       commit('SET_CHOSEN_ENGINE', payload)
     },
-    setFilterTheme: ({ commit }, payload) => {
-      commit('SET_FILTER_THEME', payload)
+    setChosenCriteria: ({ commit }, payload) => {
+      commit('SET_CHOSEN_CRITERIA', payload)
     },
-    setFilterName: ({ commit }, payload) => {
-      commit('SET_FILTER_NAME', payload)
+    setEnginesFilter: ({ commit }, payload) => {
+      commit('SET_ENGINES_FILTER', payload)
+    },
+    setCategoriesFilter: ({ commit }, payload) => {
+      commit('SET_CATEGORIES_FILTER', payload)
     }
   },
   getters: {
-    getFilterTheme: state => state.Engines.filterTheme,
-    getFilterName: state => state.Engines.filterName
+    getChosenEngines: state => state.Engines.chosen,
+    getChosenCriteria: state => state.Criteria.chosen,
+    getEnginesFilters: state => state.enginesFilters,
+    getCategoriesFilters: state => state.categoriesFilters
   }
 })

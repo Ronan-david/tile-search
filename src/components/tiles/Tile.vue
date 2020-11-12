@@ -1,10 +1,10 @@
 <template>
     <div
       class="overtile"
-      @click="chooseEngine()"
       v-if="tile"
     >
       <div
+        @click="chooseEngine()"
         :class="chosen ? 'highlighted tile' : 'tile'"
       >
           <img
@@ -18,37 +18,34 @@
       </div>
       <div class="under-tile">
         <span class="subtitle">{{tile.name}}</span>
-        <!-- <span>----------</span>
-        <span v-if="criteria" class="subtitle subtitle-criteria" @click="expandCriterias()">Critères</span> -->
-      </div>
-      <!-- <div v-if="expanded">
-        <div
-          v-for="(item, index) in tile.criteria"
-          :key="`${index}`"
-          class="criteria-vox"
+        <button
+          v-if="tile.criteria"
+          class="button-criteria"
+          @click="expandCriterias()"
         >
-          <input
-            type="checkbox"
-            id="one"
-            :value="item"
-            v-model="picked"
-          >
-          <label class="criteria-name" for="item">{{index}}</label>
-        </div>
-      </div> -->
+        Critères
+        </button>
+      </div>
+      <OptionBox
+        v-if="expanded"
+        :criteria="tile.criteria"
+        @close="onClose"
+      />
     </div>
 </template>
 <script>
 import { mapActions } from 'vuex'
+import OptionBox from '../OptionBox'
 
 export default {
   data () {
     return {
       chosen: false,
-      expanded: false,
-      picked: [],
-      newCriteria: []
+      expanded: false
     }
+  },
+  components: {
+    OptionBox
   },
   props: {
     tile: {
@@ -57,19 +54,12 @@ export default {
       default: () => {}
     }
   },
-  watch: {
-    // pour les critères futurs
-    // picked: function () {
-    //   this.setChosenEngine(this.tile.url[0].main + this.picked[0])
-    // }
-  },
   methods: {
     ...mapActions({
       setChosenEngine: 'setChosenEngine'
     }),
     chooseEngine () {
       this.chosen = !this.chosen
-      // préparer pour les critères : tourner dans l'array et concaténer les urls
       this.setChosenEngine(this.tile.url[0].value)
     },
     getFirstLetter () {
@@ -78,6 +68,9 @@ export default {
     },
     expandCriterias () {
       this.expanded = !this.expanded
+    },
+    onClose (value) {
+      this.expanded = value
     }
   }
 }
@@ -89,43 +82,39 @@ export default {
     margin-bottom: 1rem;
     border: 3px solid #ffffff;
 
+  .tile {
+    width: 10rem;
+    height: 10rem;
+    font-size: 5rem;
+    border: 3px solid white;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    vertical-align: middle;
+    background-color: #ffffff;
+
     &:hover {
       cursor: pointer;
+      box-shadow: 0 0 2px #7291a1;
+      border: 3px solid #7291a1;
     }
 
-  .tile {
-      width: 10rem;
-      height: 10rem;
-      font-size: 5rem;
-      border: 3px solid white;
+    &.highlighted {
+      box-shadow: 0 0 2px #7291a1;
+      border: 3px solid #7291a1;
+    }
+
+    .first-letter {
       display: flex;
       justify-content: center;
-      align-content: center;
-      vertical-align: middle;
-      background-color: #ffffff;
+      align-items: center;
+      height: 100%;
+    }
 
-      &:hover {
-        cursor: pointer;
-        box-shadow: 0 0 2px #7291a1;
-        border: 3px solid #7291a1;
-      }
-
-      &.highlighted {
-        box-shadow: 0 0 2px #7291a1;
-        border: 3px solid #7291a1;
-      }
-
-      .first-letter {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-      }
-
-      .tile-img {
-        width: 100%;
-        height: 100%;
-      }
+    .tile-img {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .under-tile {
@@ -134,9 +123,21 @@ export default {
 
     .subtitle {
       font-size: 1.5rem;
+    }
 
-      &-criteria {
-        cursor: pointer;
+    .button-criteria {
+      font-size: 1.25rem;
+      padding: 5px;
+      color: black;
+      text-decoration: none;
+      border-radius: 20px;
+      background-color: #fff;
+      border: 1px solid #b2b2b2;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+
+      &:hover {
+        background: #41b883;
       }
     }
   }

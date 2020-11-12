@@ -6,4 +6,6 @@
 
 <style lang="scss">
   @import "@/styles/default";
+  @import "@/styles/responsive/mobile";
+  @import "@/styles/responsive/tablet";
 </style>

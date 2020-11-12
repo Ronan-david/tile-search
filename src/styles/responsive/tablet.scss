@@ -1,0 +1,36 @@
+@media (min-width: 761px) and (max-width: 1024px) {
+    .main-container {
+        .search {
+            &-box {
+                width: 100%;
+
+                .search-info {
+                    display: none;
+                }
+            }
+        }
+        .filters {
+            width: 100%;
+        }
+        .tile-container {
+            width: 100%;
+            
+            .column {
+                display: flex;
+                flex-flow: column nowrap;
+
+                .column-title {
+                    width: 100%;
+                    text-decoration: underline;
+                    text-align: center;
+                }
+
+                .row-tile {
+                    border-left: none;
+                    display: flex;
+                    justify-content: space-evenly;
+                }
+            }
+        }
+    }
+}

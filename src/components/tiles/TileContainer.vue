@@ -1,15 +1,17 @@
 <template>
-    <div class="tile-container" v-if="getEngines">
-      <div class="column" v-for="(engine, index) in getFilteredEngines" :key="`group_${index}`">
-        <h2 class="column-title" v-html="engine.categoryName" />
-        <div class="row-tile">
-          <Tile
-            v-for="(tile, key) in engine.data"
-            :tile="tile"
-            :key="`tile_${key}`"
-          />
+    <div class="tile-container">
+      <template v-if="filteredEngines">
+        <div class="column" v-for="(engine, index) in filteredEngines" :key="`group-${index}`">
+          <h2 class="column-title" v-html="engine.categoryName" />
+          <div class="row-tile">
+            <Tile
+              v-for="(tile, key) in engine.data"
+              :tile="tile"
+              :key="`tile-${key}`"
+            />
+          </div>
         </div>
-      </div>
+      </template>
     </div>
 </template>
 <script>
@@ -18,15 +20,16 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'TileContainer',
-  data () {
-    return {
-    }
-  },
   components: {
     Tile
   },
+  data () {
+    return {
+      filteredEngines: null
+    }
+  },
   props: {
-    getEngines: {
+    engines: {
       type: Array,
       required: false,
       default: () => []
@@ -34,31 +37,66 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'getFilterTheme',
-      'getFilterName'
-    ]),
-    getFilteredEngines () {
-      const enginesCopy = [...this.getEngines]
-      const enginesCategories = enginesCopy.filter(engi => engi.categoryName.toLowerCase().includes(this.getFilterTheme))
-      let result = null
-      const test = []
-      if (enginesCategories && this.getFilterName && this.getFilterName.length > 0) {
-        result = enginesCategories.filter(element => {
-          return element.data.findIndex((el, index) => {
-            if (el.name.toLowerCase().includes(this.getFilterName.toLowerCase())) {
-              test.push(element.data[index])
-              return el
-            }
-          }) > -1
-        })
-        console.log('test', test)
-        return result
+      'getEnginesFilters',
+      'getCategoriesFilters',
+      'getEnginesData'
+    ])
+  },
+  watch: {
+    getEnginesFilters: {
+      handler: function () {
+        this.filterEngines()
+      },
+      deep: true
+    },
+    getCategoriesFilters: {
+      handler: function () {
+        this.filterCategories()
+      },
+      deep: true
+    }
+  },
+  methods: {
+    filterCategories () {
+      if (this.engines && this.getCategoriesFilters && this.getCategoriesFilters.length !== 0) {
+        const filteredCategoriesResult = this.engines.filter(e =>
+          this.getCategoriesFilters.includes(e.categoryName)
+        )
+        this.filteredEngines = filteredCategoriesResult
       } else {
-        return enginesCategories
+        this.filteredEngines = this.engines
+      }
+    },
+    filterEngines () {
+      if (this.filteredEngines && this.getEnginesFilters && this.getEnginesFilters !== '') {
+        const engineNames = []
+        this.filteredEngines.forEach(element => {
+          if (!element.data) return
+          const elementCopy = { ...element }
+          const filteredEnginesResult = elementCopy.data.filter(engine => {
+            return engine.name.toLowerCase().includes(this.getEnginesFilters)
+          })
+
+          if (filteredEnginesResult && filteredEnginesResult.length > 0) {
+            elementCopy.data = filteredEnginesResult
+            engineNames.push(elementCopy)
+          }
+        })
+        this.filteredEngines = engineNames
+      } else {
+        // cas où la recherche sur les noms est annulée
+        // affiche tous les éléments des catégories selectionnées
+        const filteredNamesResult = this.engines.filter(f =>
+          this.getCategoriesFilters.some(e => {
+            return e === f.categoryName
+          })
+        )
+        this.filteredEngines = filteredNamesResult
       }
     }
   },
   mounted () {
+    this.filterCategories()
   }
 }
 </script>
@@ -80,7 +118,9 @@ export default {
       font-size: 1.75rem;
       margin-bottom: 2rem;
       text-align: left;
-      min-width: 200px;
+      min-width: 175px;
+      width: 175px;
+      word-wrap: break-word;
     }
 
     .row-tile {
@@ -89,6 +129,12 @@ export default {
       border-left: 3px solid #7291a1;
       padding-left: 10px;
     }
+  }
+  pre {
+    font-size: 1.5rem;
+    background-color: black;
+    color: white;
+    text-align: left;
   }
 }
 </style>

@@ -19,7 +19,7 @@
                 "url": [
                     {
                         "label": "main",
-                        "value": "DuckDuckGo.com/search?q="
+                        "value": "duckduckgo.com/?q="
                     }
                 ],
                 "letters": "G",
@@ -31,7 +31,7 @@
                 "url": [
                     {
                         "label": "main",
-                        "value": "fr.wikipedia.org/wiki/Sp%C3%A9cial:Recherche?search=&sourceid=Mozilla-search&ns0=1"
+                        "value": "fr.wikipedia.org/wiki/Sp%C3%A9cial:Recherche?search="
                     }
                 ],
                 "letters": "G",
@@ -43,7 +43,7 @@
                 "url": [
                     {
                         "label": "main",
-                        "value": "en.wikipedia.org/w/index.php?search=roman+empire&title=Special:Search&profile=advanced&fulltext=1&advancedSearch-current=%7B%7D&ns0=1"
+                        "value": "en.wikipedia.org/w/index.php?search="
                     }
                 ],
                 "letters": "G",
@@ -85,6 +85,40 @@
                     {
                         "label": "main",
                         "value": "reddit.com/search/?q="
+                    }
+                ],
+                "criteria": [
+                    {
+                        "name": "AskReddit",
+                        "value": "reddit.com/r/AskReddit/search?q="
+                    },
+                    {
+                        "name": "IAmA",
+                        "value": "reddit.com/r/IAmA/search?q="
+                    },
+                    {
+                        "name": "BestOf",
+                        "value": "reddit.com/r/bestof/search?q="
+                    },
+                    {
+                        "name": "WTF",
+                        "value": "reddit.com/r/WTF/search?q="
+                    },
+                    {
+                        "name": "aww",
+                        "value": "reddit.com/r/aww/search?q="
+                    },
+                    {
+                        "name": "Gaming",
+                        "value": "reddit.com/r/gaming/search?q="
+                    },
+                    {
+                        "name": "Minecraft",
+                        "value": "reddit.com/r/Minecraft/search?q="
+                    },
+                    {
+                        "name": "Games",
+                        "value": "reddit.com/r/Games/search?q="
                     }
                 ],
                 "letters": "G",
@@ -231,7 +265,7 @@
         ]
     },
     {
-        "categoryName": "Développement <br />informatique",
+        "categoryName": "Développement informatique",
         "data": [
             {
                 "name": "StackOverFLow",
@@ -342,7 +376,7 @@
         ]
     },
     {
-        "categoryName": "Add-ons <br />de Navigateurs",
+        "categoryName": "Add-ons de Navigateurs",
         "data": [
             {
                 "name": "AddOnMozilla",
@@ -359,7 +393,7 @@
         ]
     },
     {
-        "categoryName": "Téléchargements <br /divers",
+        "categoryName": "Téléchargements divers",
         "data": [
             {
                 "name": "1337",
