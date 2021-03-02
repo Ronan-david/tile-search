@@ -3,6 +3,30 @@
         "categoryName": "Moteurs de recherche",
         "data": [
             {
+                "name": "Ecosia",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "ecosia.org/search?q="
+                    }
+                ],
+                "letters": "ECO",
+                "color": "#ffffff",
+                "logo": "ecosia"
+            },
+            {
+                "name": "StartPage",
+                "url": [
+                    {
+                        "label": "main",
+                        "value": "startpage.com/do/search?query="
+                    }
+                ],
+                "letters": "SP",
+                "color": "#ffffff",
+                "logo": "startpage"
+            },
+            {
                 "name": "Google",
                 "url": [
                     {
